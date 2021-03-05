@@ -8,14 +8,14 @@
       command: sudo rm -rf /srv/checkout
     - name: Clone a public git repository
       git:
-       repo: 'https://github.com/hartford123/Hartford.git'
+       repo: 'https://github.com/ajaysharma5/Docker.git'
        dest: /srv/checkout
        version: master
 #    - name: deploy docker 
  #     script: /home/ansadmin/ansible/test.sh
-     - name: execute command using shell
+     - name: build docker image
        become: true
-       command: sudo rm -rf /srv/checkout
-     - name: execute command using shell
+       command: sudo docker build -t AppName:latest /srv/checkout
+     - name: deploy docker image
        become: true
-       command: sudo rm -rf /srv/checkout
+       command: sudo docker run -i -t -d appaame:latest /bin/sh
