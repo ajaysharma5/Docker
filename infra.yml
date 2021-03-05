@@ -10,12 +10,12 @@
       git:
        repo: 'https://github.com/ajaysharma5/Docker.git'
        dest: /srv/checkout
-       version: master
+       version: main
 #    - name: deploy docker 
  #     script: /home/ansadmin/ansible/test.sh
      - name: build docker image
        become: true
-       command: sudo docker build -t AppName:latest /srv/checkout
+       command: sudo docker build -t appaame:latest /srv/checkout
      - name: deploy docker image
        become: true
        command: sudo docker run -i -t -d appaame:latest /bin/sh
