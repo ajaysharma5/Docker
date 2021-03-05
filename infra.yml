@@ -1,0 +1,21 @@
+---
+- hosts: myhost
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: execute command using shell
+      become: true
+      command: sudo rm -rf /srv/checkout
+    - name: Clone a public git repository
+      git:
+       repo: 'https://github.com/hartford123/Hartford.git'
+       dest: /srv/checkout
+       version: master
+#    - name: deploy docker 
+ #     script: /home/ansadmin/ansible/test.sh
+     - name: execute command using shell
+       become: true
+       command: sudo rm -rf /srv/checkout
+     - name: execute command using shell
+       become: true
+       command: sudo rm -rf /srv/checkout
