@@ -9,9 +9,9 @@ infra.tf :
             
 Infra.yml: 
             Ansible playbook to perform following tasks. 
-                  Checkout the git repo main main branch on host.
-                  Build docker image with docker file.
-                  Run docker file to deploy nginx.
+                  1. Checkout the git repo main main branch on host.
+                  2. Build docker image with docker file.
+                  3. Run docker file to deploy nginx.
                   
 Index.html : 
               Sample application.
